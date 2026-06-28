@@ -1,0 +1,30 @@
+# UAVDT-oriented training overrides for class imbalance and early overfitting.
+# class_weights assumes UAVDT class order [car, truck, bus].
+# Use with:
+# yolo detect train model=ultralytics/mycfg/yolo11-dced-dgca-dmoe-123.yaml data=... cfg=ultralytics/mycfg/uavdt-balanced-hyp.yaml
+
+epochs: 300
+patience: 80
+
+optimizer: AdamW
+lr0: 0.0015
+lrf: 0.05
+cos_lr: True
+warmup_epochs: 5.0
+warmup_bias_lr: 0.01
+weight_decay: 0.001
+
+box: 8.5
+cls: 0.8
+class_weights: [1.0, 3.0, 4.0]
+dfl: 1.7
+
+mosaic: 0.8
+close_mosaic: 40
+mixup: 0.05
+scale: 0.65
+translate: 0.12
+hsv_h: 0.01
+hsv_s: 0.6
+hsv_v: 0.5
+multi_scale: 0.25

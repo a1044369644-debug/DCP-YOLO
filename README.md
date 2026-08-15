@@ -66,28 +66,6 @@ Verify downloads with `SHA256SUMS.txt`. DCP-YOLO checkpoints contain custom comp
 
 Convert each dataset to YOLO detection format and set the local paths in your dataset YAML. Dataset files and generated `runs/` directories are ignored by Git.
 
-## Repository Layout
-
-```text
-DCP-YOLO/
-├── modules.py                      # Paper-aligned AFRD, LCC-C3k2, and APFF
-├── ultralytics/
-│   ├── nn/modules/
-│   │   ├── conv.py                 # DCED downsampling implementation
-│   │   ├── lcc_c3k2.py             # LCC-C3k2 implementation
-│   │   └── moe.py                  # DMoE feature-fusion implementation
-│   ├── nn/tasks.py                 # Model parser and custom-module registration
-│   ├── train.py                    # Local experiment example
-│   └── val.py                      # Validation/model-information example
-├── examples/                       # Ultralytics usage examples
-├── tests/                          # Framework tests
-├── predict.py                      # Local inference example
-├── pyproject.toml
-└── LICENSE
-```
-
-The local example scripts retain experiment-specific paths and are intended as references. Replace these paths with values for your environment before use.
-
 ## License
 
 This project is distributed under the [GNU Affero General Public License v3.0](LICENSE), consistent with the included Ultralytics codebase. Review the license requirements before redistribution or deployment.
